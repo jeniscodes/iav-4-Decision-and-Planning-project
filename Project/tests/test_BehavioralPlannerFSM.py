@@ -41,23 +41,25 @@ class TestBehavioralPlannerFSM(unittest.TestCase):
     def test_state_transition(self):
         PATH = os.path.dirname(os.path.abspath(__file__))
         test_behaviour_in ={
-            f"{PATH}/test_0":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_1":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_2":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_3":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_4":Maneuver.DECEL_TO_STOP,
+            f"{PATH}\\test_0":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_1":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_2":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_3":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_4":Maneuver.DECEL_TO_STOP,
         }
         test_behaviour_out ={
-            f"{PATH}/test_0":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_1":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_2":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_3":Maneuver.FOLLOW_LANE,
-            f"{PATH}/test_4":Maneuver.DECEL_TO_STOP,
+            f"{PATH}\\test_0":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_1":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_2":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_3":Maneuver.FOLLOW_LANE,
+            f"{PATH}\\test_4":Maneuver.DECEL_TO_STOP,
         }
 
         for test in glob.glob(f"{PATH}/test_[0-9]"):
             ego_state, goal_input, is_junction, tl_state, sim_time, goal_res = \
             self.parse_state_transition_test(f"{test}/state_transition.json")
+            print("+++++++++++++++++++++",test,"-------------------------------------------------------------------------------")
+            print(test_behaviour_in)
             self.behavioral_planner._active_maneuver = test_behaviour_in[test]
             self.behavioral_planner._goal = goal_res            
 

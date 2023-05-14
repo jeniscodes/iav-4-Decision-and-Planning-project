@@ -6,7 +6,7 @@ import unittest
 
 from planners.VelocityProfileGenerator import VelocityProfileGenerator
 from planners.Structures import State, PathPoint, Maneuver, TrajectoryPoint
-import TestParams as p
+from . import TestParams as p
 
 
 class TestVelocityProfileGenerator(unittest.TestCase):
@@ -62,6 +62,7 @@ class TestVelocityProfileGenerator(unittest.TestCase):
                     None,
                     behaviour
                 )
+
                 self.assertListEqual(trajectory, trajectory_calculated)
 
                 print("PASSED")

@@ -138,8 +138,8 @@ class BehavioralPlannerFSM(object):
                 # use cosine and sine to get x and y
                 #
                 ang = goal.rotation.yaw + np.pi
-                goal.location.x += 1.0 #<- calculate appropiate coordinate
-                goal.location.y += 1.0 #<- calculate appropiate coordinate
+                # goal.location.x += 1.0 #<- calculate appropiate coordinate
+                # goal.location.y += 1.0 #<- calculate appropiate coordinate
 
                 goal.location.x = goal.location.x + (self._stop_line_buffer * np.cos(ang))
                 goal.location.y = goal.location.y + (self._stop_line_buffer * np.sin(ang))

@@ -7,7 +7,7 @@ import unittest
 
 from planners.MotionPlanner import MotionPlanner
 from planners.Structures import State
-import TestParams as p
+from . import TestParams as p
 
 
 class TestMotionPlanner(unittest.TestCase):
